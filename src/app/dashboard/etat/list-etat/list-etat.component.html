@@ -1,0 +1,60 @@
+ 
+
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+<app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+ <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="container">
+        <h2>Liste des Etats <small> </small></h2>
+        <div class="row">
+          <div class="col-2">
+            <button type="button" routerLink="/dashboard/ajout-etat">Ajouter Etat</button>
+          </div>
+
+          <div class="col-2">
+            <button type="button" (click)="exportExcel()">Expoter </button>
+          </div>
+          <div class="col-4">
+            
+          </div>
+
+          <div class="col-2">
+          <input type="text" placeholder="Rechercher ..."/>
+          </div>
+          <div class="col-2">
+            <button type="button">Recherche</button>
+          </div>
+        </div>
+        <ul class="responsive-table">
+          <li class="table-header">
+            <div class="col col-1">Id</div>
+            <div class="col col-2">Nom etat</div>
+          
+            <div class="col col-3" >Action</div> 
+         
+          </li>
+           
+     <ng-container *ngFor="let item of etats">
+     
+        
+          <li class="table-row">
+            <div class="col col-1" data-label="Job Id">{{item.id}}</div>
+            <div class="col col-2" data-label="Customer Name">{{item.Etat_Name}}</div>
+   
+            <div    class="col col-4" data-label="Payment Status">      <i (click)="delete(item.id)" class="uil uil-trash icon"></i></div>
+          </li>
+        </ng-container>
+        </ul>
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  

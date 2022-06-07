@@ -1,0 +1,66 @@
+ 
+
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+<app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+ <app-navbar></app-navbar>
+ <div class="container" style="margin-top: 75px">
+    <header>Liste best Practice</header>
+    <div class="row">
+        <div class="col-2">
+          <button type="button" routerLink="/dashboard/ajout-bestPractice">Ajouter Practice</button>
+        </div>
+
+        <div class="col-2">
+          <button type="button" (click)="exportExcel()">Expoter </button>
+        </div>
+        <div class="col-4">
+          
+        </div>
+
+        <div class="col-2">
+        <input type="text" placeholder="Rechercher ..."/>
+        </div>
+        <div class="col-2">
+          <button type="button">Recherche</button>
+        </div>
+      </div>
+
+    <table style="width: 100%;">
+        <tbody>
+          <tr>
+            <th > #</th>
+            <th  >Action </th>
+            <th  > Photo</th>
+            <th  > File</th>
+            <th  > Link</th>
+            <th   > Modifier</th>
+          </tr>
+          <tr *ngFor="let item of basts | paginate: { itemsPerPage: 5, currentPage: p } " >
+            <td>{{item?.id  }}</td>
+            <td>{{item.action}} </td> 
+              <td> <img [src]="item.photo" alt=""/></td>
+              <td> <i (click)="visualise(item.file)"  class="uil-arrow-circle-down"></i></td>
+              <td> <i (click)="open(item.link)" class="uil-link"></i></td>
+              <td  ><i   class="uil-book-open"></i><i (click)="delete(item.id)" class="uil-eye"></i></td>
+          </tr>
+        </tbody>
+      </table>
+            <div class="row pag">
+
+              <pagination-controls previousLabel=" " nextLabel="" class="pagination-block" (pageChange)="p = $event">
+              </pagination-controls>
+            </div>         
+ 
+</div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  

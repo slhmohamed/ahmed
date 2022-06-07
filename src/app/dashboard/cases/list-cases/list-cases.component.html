@@ -1,0 +1,74 @@
+ 
+
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+<app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+ <app-navbar></app-navbar>
+ <div class="container" style="margin-top: 75px">
+    <header>Liste Cases</header>
+    <div class="row">
+        <div class="col-2">
+          <button type="button" routerLink="/dashboard/ajout-cases">Ajouter Cases</button>
+        </div>
+
+        <div class="col-2">
+          <button type="button" (click)="exportExcel()">Expoter </button>
+        </div>
+        <div class="col-4">
+          
+        </div>
+
+        <div class="col-2">
+        <input type="text" placeholder="Rechercher ..."/>
+        </div>
+        <div class="col-2">
+          <button type="button">Recherche</button>
+        </div>
+      </div>
+
+    <table style="width: 100%;">
+        <tbody>
+          <tr>
+            <th >#</th>
+            <th  >Titre </th>
+            <th  > Node</th>
+            <th  > Sevirite</th>
+            <th  > Status</th>
+            <th   > Dernier mis a jours</th>
+            <th   > Date de creation</th>
+            <th   > Createur</th>
+            <th   > Timer</th>
+          </tr>
+          <tr *ngFor="let item of cases | paginate: { itemsPerPage: 5, currentPage: p } " >
+            <td>{{item?.id  }}</td>
+            <td>{{item.title_case}} </td> 
+            <td>{{item.node}} </td> 
+            <td>{{item.sevirite}} </td> 
+            <td>{{item.status}} </td> 
+            <td>{{item.last_update}} </td> 
+            <td>{{item.creation_date}} </td> 
+            <td>{{item.obenedby}} </td> 
+            <td>{{item.timer}} </td> 
+             
+              <td  ><i   class="uil-book-open"></i><i (click)="delete(item.id)" class="uil-eye"></i></td>
+          </tr>
+        </tbody>
+      </table>
+            <div class="row pag">
+
+              <pagination-controls previousLabel=" " nextLabel="" class="pagination-block" (pageChange)="p = $event">
+              </pagination-controls>
+            </div>         
+ 
+</div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  

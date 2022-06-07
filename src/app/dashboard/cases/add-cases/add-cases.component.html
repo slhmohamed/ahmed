@@ -1,0 +1,144 @@
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+  
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+ 
+
+            <div class=" row">
+  
+                <div class=" col-lg-12 col-md-12">
+                  <div class=" card">
+                    <div class="container">
+                        <div class="title">Ajouter Case</div>
+                     
+                        <div class="content">
+                          <form [formGroup]="caseForm" (ngSubmit)="onSubmit()">
+                             
+                            <div class="user-details">
+                             
+                              <div class="input-box">
+                                <span class="details">Titre</span>
+                                <input type="text"  placeholder="Entrer Titre" formControlName="title_case"    >
+                     
+                            </div>
+                        
+                              <div class="input-box">
+                                <span class="details">Date implementation</span>
+                                <input type="date"   formControlName="creation_date"  >
+                              </div>
+                     
+                            
+                             
+                              <div class="col-12">
+                             <div class="input-box">
+                                <span class="details">Comment</span>
+                               <textarea formControlName="description_case"  ></textarea>
+                              </div>
+                              </div>
+    
+                              <div class="input-box">
+                                <span class="details">Date mis a jour</span>
+                                <input type="date" placeholder="Entrer Titre" formControlName="last_update"  >
+                     
+                            </div>
+                        
+                              <div class="input-box">
+                                <span class="details">Date fermuturer</span>
+                                <input type="date"   formControlName="closure_date"  >
+                              </div>
+    
+                              <div class="col-12">
+                                <div class="input-box">
+                                   <span class="details">Description mis a jour</span>
+                                  <textarea formControlName="Update_description"  ></textarea>
+                                 </div>
+                                 </div>
+    
+                                 <div class="col-12">
+                                    <div class="input-box">
+                                       <span class="details">Commentaire fermuture</span>
+                                      <textarea formControlName="closure_comment"  ></textarea>
+                                     </div>
+                                     </div>
+    
+                                     <div class="input-box">
+                                        <span class="details">Timer</span>
+                                        <input type="text" placeholder="Entrer Titre" formControlName="timer"  >
+                             
+                                    </div>
+                                
+                                    <div class="input-box">
+                                        <span class="details">Node</span>
+            
+                                        <select name="pets" id="pet-select" formControlName="node"  >
+                                          <ng-container *ngFor="let item of nodes">
+                                            <option [value]="item.id">{{item.Node_Name}}</option>
+                                            </ng-container>
+                                        </select>                         
+                                     </div>
+                                  
+                              
+                                     <div class="input-box">
+                                        <span class="details">Sevirite</span>
+            
+                                        <select name="pets" id="pet-select" formControlName="sevirite"  >
+                                          <ng-container *ngFor="let item of sev">
+                                            <option [value]="item.id">{{item.Name_Sv}}</option>
+                                            </ng-container>
+                                        </select>                         
+                                     </div>
+                                     <div class="input-box">
+                                        <span class="details">Status</span>
+            
+                                        <select name="pets" id="pet-select"formControlName="status"   >
+                                          <ng-container *ngFor="let item of status">
+                                            <option [value]="item.id">{{item.Type}}</option>
+                                            </ng-container>
+                                        </select>                         
+                                     </div>
+                                     <div class="input-box">
+                                      <span class="details">Owner</span>
+          
+                                      <select name="pets" id="pet-select" formControlName="obenedby"    >
+                                        <ng-container *ngFor="let item of users">
+                                          <option [value]="item.id">{{item.username}}</option>
+                                          </ng-container>
+                                          
+                                      </select>                         
+                                   </div>
+                              
+                            </div>
+                          
+                            <div class="button">
+                              <button type="submit" value="Register">Ajouter</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+         
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

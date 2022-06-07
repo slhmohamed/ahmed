@@ -1,0 +1,77 @@
+ 
+ 
+
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+<app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+ <app-navbar></app-navbar>
+ <div class="container" style="margin-top: 75px">
+    <header>Liste Activitie</header>
+    <div class="row">
+        <div class="col-2">
+          <button type="button" routerLink="/dashboard/ajout-activite">Ajouter Activitie</button>
+        </div>
+
+        <div class="col-2">
+          <button type="button" (click)="exportExcel()">Expoter </button>
+        </div>
+        <div class="col-4">
+          
+        </div>
+
+        <div class="col-2">
+        <input type="text" placeholder="Rechercher ..."/>
+        </div>
+        <div class="col-2">
+          <button type="button" (click)="open()">Recherche</button>
+        </div>
+      </div>
+
+    <table style="width: 100%;">
+        <tbody>
+          <tr>
+  
+            <th  >Change Id </th>
+            <th  > Titre</th>
+      
+            <th   > Date de creation</th>
+            <th   > Status</th>
+            <th   > Owner</th>
+            <th   > NotOk</th>
+            <th   > Ok</th>
+             <th   > Supprime</th>
+          </tr>
+          <tr *ngFor="let item of activites | paginate: { itemsPerPage: 5, currentPage: p } " >
+            <td>{{item?.Change_Id  }}</td>
+            <td>{{item.Title_activity}} </td> 
+           
+        
+            <td>{{item.creation_date}} </td> 
+            <td>{{item.status}} </td> 
+            <td>{{item.obenedby}} </td> 
+              
+            <td  > <i style="color: red;" (click)="open( )" class=" uil-thumbs-down"></i></td>
+            <td  > <i style="color: rgb(3, 151, 60);" (click)="open( )" class=" uil-thumbs-up"></i></td>
+              <td  > <i style="color: red;" (click)="delete(item.id)" class="uil-trash-alt"></i></td>
+          </tr>
+        </tbody>
+      </table>
+            <div class="row pag">
+
+              <pagination-controls previousLabel=" " nextLabel="" class="pagination-block" (pageChange)="p = $event">
+              </pagination-controls>
+            </div>         
+ 
+</div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <app-update-activite></app-update-activite>
+  

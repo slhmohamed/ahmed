@@ -1,0 +1,64 @@
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+  
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+            <div class=" row">
+  
+                <div class=" col-lg-12 col-md-12">
+                  <div class=" card">
+                    <div class="container">
+                        <div class="title">Ajouter Status</div>
+                        <div class="content">
+                          <form [formGroup]="statusForm" (ngSubmit)="onSubmit()">
+                             
+                            <div class="user-details">
+                             
+                              
+                            
+                             
+                       
+                         
+                
+                              <div class="input-box" style="    width: 961px !important;">
+                                <span class="details">Type</span>
+                                <input type="text"  formControlName="Type"  required> 
+                              </div>
+                               
+                        
+                                   
+                              
+                            </div>
+                          
+                            <div class="button">
+                              <button type="submit" >Ajouter</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+         
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

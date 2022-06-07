@@ -1,0 +1,33 @@
+<body>
+    <div class="wrapper">
+      <h2>Registration</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmitr()">
+        <div class="input-box">
+          <input type="text" placeholder="Username" formControlName="username">
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Email" formControlName="email">
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Mot de passe" formControlName="password">
+        </div>
+        <div class="input-box">
+           
+<select   id="pet-select" formControlName="groups">
+    <option disabled>--Please choose an groups--</option>
+    <option value="Employe">Employe</option>
+    <option value="Employe">Employe</option>
+
+ 
+</select>
+        </div>
+     
+        <div class="input-box button">
+          <input type="Submit" value="Register Now">
+        </div>
+        <div class="text">
+          <h3>Vous avez déjà un compte?  <a routerLink="/">Connecte-toi maintenant</a></h3>
+        </div>
+      </form>
+    </div>
+  </body> 
