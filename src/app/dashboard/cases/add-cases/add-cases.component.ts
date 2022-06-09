@@ -40,7 +40,7 @@ caseForm:FormGroup
 
       closure_comment: ['', Validators.required],
 
-      timer: ['', Validators.required],
+      timer: [''],
 
 
 
@@ -76,7 +76,18 @@ getAllUsers(){
   })
 }
 
- 
+clearFilter(e:any){
+  console.log(e.target.value);
+  let DateF=new Date(e.target.value);
+  let DateD=new Date(this.caseForm.value.creation_date);
+  var time_diff = DateF.getTime() - DateD.getTime();
+  // différence de jours
+ var days_Diff = time_diff / (1000 * 3600 * 24);
+  
+console.log( days_Diff);
+
+  this.caseForm.patchValue({'timer':days_Diff})
+}
 onSubmit() {
   console.log(this.caseForm.value);
 

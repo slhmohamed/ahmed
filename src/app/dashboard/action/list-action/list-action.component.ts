@@ -10,6 +10,7 @@ import * as fs from 'file-saver';
 })
 export class ListActionComponent implements OnInit {
   actions:any=[]
+  search=''
   role: string | null;
   constructor(private toast:ToastrService,private actionService:ActionService) { }
 
@@ -23,6 +24,19 @@ export class ListActionComponent implements OnInit {
        
       
     })
+  }
+  
+  searchM(){
+ 
+    
+    console.log(this.search);
+    this.actions.array.forEach((element:any) => {
+      if((element.Node_Name.indexOf!=-1)||(element.Node_Name.indexOf!=-1)){
+        this.actions.push(element)
+
+      }
+    });
+    
   }
   delete(id:any){
     this.actionService.deleteAction(id).subscribe(res=>{

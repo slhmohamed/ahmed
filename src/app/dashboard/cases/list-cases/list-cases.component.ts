@@ -10,6 +10,7 @@ import * as fs from 'file-saver';
 })
 export class ListCasesComponent implements OnInit {
   cases:any=[]
+  search:any=''
   p: number = 1;
   constructor(private toast:ToastrService,private casesService:CasesService) { }
 
@@ -21,6 +22,20 @@ getAllCases(){
     this.cases=res
   })
 }
+
+searchM(){
+ 
+    
+  console.log(this.search);
+  this.cases.array.forEach((element:any) => {
+    if((element.title_case.indexOf!=-1)||(element.Node_Name.indexOf!=-1)){
+      this.cases.push(element)
+
+    }
+  });
+  
+}
+
 delete(id:any){
   this.casesService.deleteCases(id).subscribe(res=>{
     this.getAllCases()

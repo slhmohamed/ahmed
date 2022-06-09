@@ -1,4 +1,5 @@
  
+ 
 
 <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
@@ -11,10 +12,10 @@
       <!-- partial:../../partials/_sidebar.html -->
  <app-navbar></app-navbar>
  <div class="container" style="margin-top: 75px">
-    <header>Liste Cases</header>
+    <header>To Do Activitie</header>
     <div class="row">
         <div class="col-2">
-          <button type="button" routerLink="/dashboard/ajout-cases">Ajouter Cases</button>
+          <button type="button" routerLink="/dashboard/ajout-activite">Ajouter Activitie</button>
         </div>
 
         <div class="col-2">
@@ -28,38 +29,41 @@
         <input type="text" placeholder="Rechercher ..."/>
         </div>
         <div class="col-2">
-          <button type="button">Recherche</button>
+          <button type="button" (click)="open()">Recherche</button>
         </div>
       </div>
 
     <table style="width: 100%;">
         <tbody>
           <tr>
-            <th >#</th>
-            <th  >Titre </th>
-            <th  > Node</th>
-            <th  > Sevirite</th>
-            <th  > Status</th>
-            <th   > Dernier mis a jours</th>
+  
+            <th  >Change Id </th>
+            <th  > Titre</th>
+      
             <th   > Date de creation</th>
-            <th   > Createur</th>
-            <th   > Timer</th>
-            <th   > Modifiier</th>
-            <th   > Supprimer</th>
+            <th   > Status</th>
+            <th   > Owner</th>
+            <th   > NotOk</th>
+            <th   > Ok</th>
+             <th   > Supprime</th>
           </tr>
-          <tr *ngFor="let item of cases | paginate: { itemsPerPage: 5, currentPage: p } " >
-            <td>{{item?.id  }}</td>
-            <td>{{item.title_case}} </td> 
-            <td>{{item.node}} </td> 
-            <td>{{item.sevirite}} </td> 
-            <td>{{item.status}} </td> 
-            <td>{{item.last_update}} </td> 
+          <tr *ngFor="let item of activites | paginate: { itemsPerPage: 5, currentPage: p } " >
+            <ng-container *ngIf="item.comment=='' && item.etat==''">
+             
+            
+            <td>{{item?.Change_Id  }}</td>
+            <td>{{item.Title_activity}} </td> 
+           
+        
             <td>{{item.creation_date}} </td> 
+            <td>{{item.status}} </td> 
             <td>{{item.obenedby}} </td> 
-            <td>{{item.timer}} </td> 
-            <td  ><i   class="uil-book-open"></i><i routerLink="/dashboard/edit-cases/{{item.id}}" style="color: blue;" class="uil-eye"></i></td>
-              <td  ><i   class="uil-book-open"></i><i (click)="delete(item.id)" style="color: red;" class="uil uil-trash icon"></i></td>
-          </tr>
+              
+            <td  > <i style="color: red;" (click)="open( )" class=" uil-thumbs-down"></i></td>
+            <td  > <i style="color: rgb(3, 151, 60);" (click)="open( )" class=" uil-thumbs-up"></i></td>
+              <td  > <i style="color: red;" (click)="delete(item.id)" class="uil-trash-alt"></i></td>
+            </ng-container>
+            </tr>
         </tbody>
       </table>
             <div class="row pag">
@@ -73,4 +77,5 @@
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+  <app-update-activite></app-update-activite>
   

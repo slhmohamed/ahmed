@@ -29,16 +29,15 @@
           <input type="text" placeholder="Rechercher ..."/>
           </div>
           <div class="col-2">
-            <button type="button">Recherche</button>
+            <button type="button" (click)="searchM()">Recherche</button>
           </div>
         </div>
         <ul class="responsive-table">
           <li class="table-header">
             <div class="col col-1">Nom</div>
             <div class="col col-2">Description</div>
-          
-            <div class="col col-3" >Action</div> 
-         
+            <div class="col col-3" >Modifier</div> 
+            <div class="col col-3" >Supprimer</div> 
           </li>
            
      <ng-container *ngFor="let item of actions">
@@ -47,7 +46,7 @@
           <li class="table-row">
             <div class="col col-1" data-label="Job Id">{{item.Name_Action}}</div>
             <div class="col col-2" data-label="Customer Name">{{item.description_Action}}</div>
-   
+            <div    class="col col-4" data-label="Payment Status"><i routerLink="/dashboard/edit-action/{{item.id}}" class="uil uil-trash icon"></i></div>
             <div    class="col col-4" data-label="Payment Status"> <i (click)="delete(item.id)" class="uil uil-trash icon"></i></div>
           </li>
         </ng-container>

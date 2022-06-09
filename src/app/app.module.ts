@@ -36,6 +36,10 @@ import { UpdateBestPracticeComponent } from './dashboard/bestPractice/update-bes
 import { AddActiviteComponent } from './dashboard/activite/add-activite/add-activite.component';
 import { UpdateActiviteComponent } from './dashboard/activite/update-activite/update-activite.component';
 import { ListActiviteComponent } from './dashboard/activite/list-activite/list-activite.component';
+import { TodoActiviteComponent } from './dashboard/activite/todo-activite/todo-activite.component';
+import { UpdateActionComponent } from './dashboard/action/update-action/update-action.component';
+import { UpdateSevirityComponent } from './dashboard/servities/update-sevirity/update-sevirity.component';
+import { UpdateCasesComponent } from './dashboard/cases/update-cases/update-cases.component';
  @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +68,11 @@ import { ListActiviteComponent } from './dashboard/activite/list-activite/list-a
       UpdateBestPracticeComponent,
       AddActiviteComponent,
       UpdateActiviteComponent,
-      ListActiviteComponent
+      ListActiviteComponent,
+      TodoActiviteComponent,
+      UpdateActionComponent,
+      UpdateSevirityComponent,
+      UpdateCasesComponent
     
 
   ],

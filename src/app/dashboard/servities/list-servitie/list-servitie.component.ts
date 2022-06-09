@@ -10,12 +10,26 @@ import * as fs from 'file-saver';
 })
 export class ListServitieComponent implements OnInit {
   sev:any=[]
+  search=''
   constructor(private toast:ToastrService,private sevService:SeviritiesService) { }
 
  ngOnInit(): void {
    
    this.getAllStatus()
  }
+ 
+ searchM(){
+ 
+    
+  console.log(this.search);
+  this.sev.array.forEach((element:any) => {
+    if((element.Name_SV.indexOf!=-1) ){
+      this.sev.push(element)
+
+    }
+  });
+  
+}
  getAllStatus(){
    this.sevService.getAllServities().subscribe(res=>{
      this.sev=res

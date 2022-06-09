@@ -7,6 +7,7 @@ import { AddActionComponent } from './dashboard/action/add-action/add-action.com
 import { ListActionComponent } from './dashboard/action/list-action/list-action.component';
 import { AddActiviteComponent } from './dashboard/activite/add-activite/add-activite.component';
 import { ListActiviteComponent } from './dashboard/activite/list-activite/list-activite.component';
+import { TodoActiviteComponent } from './dashboard/activite/todo-activite/todo-activite.component';
 import { AddBestPracticeComponent } from './dashboard/bestPractice/add-best-practice/add-best-practice.component';
 import { ListBestPracticeComponent } from './dashboard/bestPractice/list-best-practice/list-best-practice.component';
 import { AddCasesComponent } from './dashboard/cases/add-cases/add-cases.component';
@@ -70,6 +71,7 @@ const routes: Routes = [
        //activite  routing
        {path: "dashboard/list-activite", component:ListActiviteComponent },
        {path: "dashboard/ajout-activite", component: AddActiviteComponent},
+       {path: "dashboard/toDo-activite", component: TodoActiviteComponent},
  
 
 

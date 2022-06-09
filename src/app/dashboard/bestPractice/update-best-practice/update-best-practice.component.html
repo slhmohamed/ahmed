@@ -1,1 +1,91 @@
-<p>update-best-practice works!</p>
+<div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <app-header-nav></app-header-nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+  
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-navbar></app-navbar>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+    
+
+            <div class="container">
+                <div class="title">Ajouter best practice</div>
+                <div class="content">
+                    <form [formGroup]="bestForm" (ngSubmit)="onSubmit()">
+                     
+                    <div class="user-details">
+                     
+                      <div class="input-box">
+                        <span class="details">Photo</span>
+                        <input type="file" placeholder="Entrer Titre"  >
+             
+                    </div>
+                
+                      <div class="input-box">
+                        <span class="details">File</span>
+                        <input type="file"   >
+                      </div>
+             
+                   
+                        <div class="input-box" style="    width: 961px !important;">
+                            <span class="details">Link</span>
+                            <input type="text"   formControlName="link"> 
+                          </div>
+                
+                     
+                      <div class="input-box">
+                        <span class="details">Action</span>
+                        <select name="pets" id="pet-select" formControlName="action"  >
+                            <ng-container *ngFor="let item of actions">
+                              <option [value]="item.id">{{item.Name_Action}}</option>
+                              </ng-container>
+                          </select>                           
+                     </div>
+
+                     <div class="input-box">
+                        <span class="details">Node</span>
+
+                        <select name="pets" id="pet-select" formControlName="node"  >
+                            <ng-container *ngFor="let item of nodes">
+                              <option [value]="item.id">{{item.Node_Name}}</option>
+                              </ng-container>
+                          </select>                           
+                     </div>
+
+                    
+                 
+
+                        
+                      
+                          
+                      
+                         
+                      
+                    </div>
+                  
+                    <div class="button">
+                      <button type="submit" value="Register">Ajouter</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+
+
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+         
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>

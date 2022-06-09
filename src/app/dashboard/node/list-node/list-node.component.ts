@@ -9,6 +9,7 @@ import * as fs from 'file-saver';
   styleUrls: ['./list-node.component.scss']
 })
 export class ListNodeComponent implements OnInit {
+  search=''
   nodes:any=[]
   role: string | null;
   constructor(private toast:ToastrService,private nodeService:NodeService) { }
@@ -17,12 +18,25 @@ export class ListNodeComponent implements OnInit {
     
     this.getAllNode()
   }
+ 
   getAllNode(){
     this.nodeService.getAllNode().subscribe(res=>{
       this.nodes=res
        
       
     })
+  }
+  searchM(){
+ 
+    
+    console.log(this.search);
+    this.nodes.array.forEach((element:any) => {
+      if((element.Node_Name.indexOf!=-1)||(element.Node_Name.indexOf!=-1)){
+        this.nodes.push(element)
+
+      }
+    });
+    
   }
   
   delete(id:any){

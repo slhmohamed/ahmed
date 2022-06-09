@@ -13,22 +13,62 @@
                             <div class="container">
                                 <div class="title">Modifier Activitie</div>
                                 <div class="content">
-                                    <form  >
-                                        
-                                   
-                                     
-                                    
-                                     <div class="input-box">
-                                        <span class="details">Comment</span>
-                                       <textarea  ></textarea>
-                                      </div>
-                               
-                                  
-                                    <div class="button">
-                                      <button type="submit"  >Modifier</button>
+                                  <form [formGroup]="activtyForm" (ngSubmit)="onSubmit()">
+                                      <div class="user-details">
+                                    <div class="input-box">
+                                      <span class="details">Titre</span>
+                                      <input type="text"  formControlName="Change_Id" placeholder="Entrer Titre" required>
                                     </div>
-                                  </form>
-                                </div>
+      
+                                    <div class="input-box">
+                                      <span class="details">Change id</span>
+                                      <input type="text"  formControlName="Title_activity" placeholder="Entrer Titre" required>
+                                    </div> 
+                                    <div class="input-box">
+                                      <span class="details">Date implementation</span>
+                                      <input type="date"   formControlName="Date_Implementation"  required>
+                                    </div>
+          
+                                    <div class="input-box">
+                                      <span class="details">Etat</span>
+                                      <select name="pets" id="pet-select" formControlName="etat"  >
+                                      <ng-container *ngFor="let item of etats">
+                                          <option [value]="item.id">{{item.Etat_Name}}</option>
+                                          </ng-container>     
+                                          </select>                  
+                                   </div>
+      
+                                   <div class="input-box">
+                                      <span class="details">Node</span>
+                                      <select name="pets" id="pet-select" formControlName="node"  >
+                                      <ng-container *ngFor="let item of nodes">
+                                          <option [value]="item.id">{{item.Node_Name}}</option>
+                                          </ng-container>   
+                                          </select>                    
+                                   </div>
+                                   <div class="input-box">
+                                      <span class="details">Owner</span>
+                                      <select name="pets" id="pet-select" formControlName="obenedby"    >
+                                        <ng-container *ngFor="let item of users">
+                                          <option [value]="item.id">{{item.username}}</option>
+                                          </ng-container>
+                                          
+                                      </select> 
+                                                      
+                                   </div>
+                                   
+                                  
+                                   <div class="input-box">
+                                      <span class="details">Comment</span>
+                                     <textarea  formControlName="comment"></textarea>
+                                    </div>
+                                  </div>
+                                
+                                  <div class="button">
+                                    <button type="submit" value="Register">Ajouter</button>
+                                  </div>
+                                </form>
+                              </div>
                               </div>
                           </div>
                         </div>

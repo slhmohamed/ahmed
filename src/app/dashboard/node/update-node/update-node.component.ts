@@ -13,8 +13,7 @@ export class UpdateNodeComponent implements OnInit {
   nodeForm:FormGroup
   id:any=''
   constructor(private formBuilder:FormBuilder,private nodeService:NodeService,private router:Router,
-    private toastr: ToastrService,private route: ActivatedRoute,) { }
-
+  private toastr: ToastrService,private route: ActivatedRoute,) { }
   ngOnInit(): void {
 
     

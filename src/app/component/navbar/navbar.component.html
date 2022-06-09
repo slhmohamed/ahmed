@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <ul class="nav">
-
+<!--
     <li class="nav-item" >
       <a class="nav-link" data-toggle="collapse" href="#formateur" aria-expanded="false" aria-controls="charts">
         <i class="uil-chat-bubble-user"></i>
@@ -13,7 +13,7 @@
           <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/list-status">Liste Status</a></li>
         </ul>
       </div>
-    </li>
+    </li>-->
 
     <li class="nav-item" *ngIf="role==='Admin'">
       <a class="nav-link" data-toggle="collapse" href="#Responsable" aria-expanded="false" aria-controls="charts">
@@ -40,7 +40,9 @@
       <div class="collapse" id="Société">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/ajout-activite">Nouveau Activite</a></li>
-          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/list-activite">Liste Activite</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/list-activite">Historqiue Activite</a></li>
+          <li class="nav-item"> <a class="nav-link" routerLink="/dashboard/toDo-activite">To Do Activite</a></li>
+
         </ul>
       </div>
     </li>
@@ -74,7 +76,7 @@
         </ul>
       </div>
     </li>
-
+<!--
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#Cataloge" aria-expanded="false" aria-controls="charts">
         <i class=" uil-bookmark-full"></i>
@@ -89,7 +91,7 @@
       </div>
     </li>
 
-
+-->
 
     <li  class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#Node" aria-expanded="false" aria-controls="Node">
